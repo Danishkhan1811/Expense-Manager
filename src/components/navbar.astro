@@ -1,0 +1,29 @@
+---
+import '../styles/navbar.css'
+import '../styles/global.css'
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Expense Manager</title>
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+<div class="sidebar">
+<div class="logo">
+<img src="https://astro.js.org/astro.png">
+<p>Expense<br><span class="orange">Manager</span></p>
+</div>
+<nav>
+<a href="../login/">Income</a>
+<a href="/">Expenses</a>
+<a href="/">Summary</a>
+<a href="/" class="logout"><div class="bx bx-log-out"></div></a>
+</nav>
+</div>
+</body>
+</html>

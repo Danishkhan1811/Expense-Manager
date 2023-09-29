@@ -1,0 +1,50 @@
+/* Apply basic styles to the sidebar */
+.sidebar {
+    display: flex;
+    height: 12vh;
+    width: 217vh; /* Adjust the width as needed */
+    background-color: #230234; /* Background color for the sidebar */
+    color: #fff; /* Text color for the links */
+    padding: 15px 20px; /* Add some padding to the sidebar */
+  }
+
+.sidebar .logo{
+    display: flex;
+    font-size: 18px;
+}
+
+.sidebar .logo .orange{
+ color: #fa7726;
+}
+
+.sidebar .logo img{
+    width: 60px;
+    height: 60px;
+  }
+
+.sidebar nav{
+    text-align: center;
+    margin-left: 30%; 
+    margin-top: 10px;
+  }
+  
+  /* Style the links inside the sidebar */
+  .sidebar nav a {
+    color: #fff; /* Text color for the links */
+    text-decoration: none; /* Remove underlines from links */
+    font-size: 22px;
+    padding: 10px 20px;
+    margin: 10px 2px; /* Add some space between the links */
+    transition: 0.5s ease;
+  }
+  
+  .sidebar nav .logout{
+    margin-left: 66vh;
+  }
+
+  /* Change link color on hover */
+  .sidebar nav a:hover {
+    color: #fa7726; /* Change the link color on hover */
+    transform: scale(1.5);
+  }
+  
