@@ -1,16 +1,15 @@
 /* Apply basic styles to the sidebar */
 .sidebar {
-    display: flex;
-    height: 12vh;
-    width: 217vh; /* Adjust the width as needed */
-    background-color: #230234; /* Background color for the sidebar */
+    height: 100vh;
+    width: 30vh; /* Adjust the width as needed */
+    background-color: transparent; /* Background color for the sidebar */
     color: #fff; /* Text color for the links */
-    padding: 15px 20px; /* Add some padding to the sidebar */
+    padding: 20px; /* Add some padding to the sidebar */
   }
 
 .sidebar .logo{
     display: flex;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .sidebar .logo .orange{
@@ -24,12 +23,12 @@
 
 .sidebar nav{
     text-align: center;
-    margin-left: 30%; 
-    margin-top: 10px;
+    margin-top: 22vh; 
   }
   
   /* Style the links inside the sidebar */
   .sidebar nav a {
+    display: block;
     color: #fff; /* Text color for the links */
     text-decoration: none; /* Remove underlines from links */
     font-size: 22px;
@@ -37,14 +36,43 @@
     margin: 10px 2px; /* Add some space between the links */
     transition: 0.5s ease;
   }
-  
-  .sidebar nav .logout{
-    margin-left: 66vh;
+
+  .sidebar .socials{
+    font-size: 25px;
+    margin-top: 33vh;
+    text-align: center;
+  } 
+
+  .sidebar .socials i{
+    padding: 5px;
+    margin: 5px;
+    color: #fff;
+    transition: 0.5s ease;
+    border-radius: 50%;
+  }
+
+  .sidebar .socials i:hover{
+    background-color: #cccccc27;
+    transform: scale(1.4);
+  }
+
+  .sidebar .socials .in:hover{
+    color: #ff006a;
+  }
+
+  .sidebar .socials .fb:hover{
+    color: #3b5998;
+  }
+
+  .sidebar .socials .tw:hover{
+    color: #00a6ff;
   }
 
   /* Change link color on hover */
   .sidebar nav a:hover {
+    background-color: #cccccc27;
+    border-radius: 5px;
     color: #fa7726; /* Change the link color on hover */
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   

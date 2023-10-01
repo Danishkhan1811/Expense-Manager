@@ -1,0 +1,45 @@
+---
+import Navbar from '../components/navbar.astro'
+import '../styles/global.css'
+import '../styles/expense.css'
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="https://astro.js.org/astro.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Expense Manager</title>
+	</head>
+	<body>
+		<Navbar/>
+        <div class="manager">
+            <h1>Expense <span class="orange">Manager</span></h1>
+            <div class="combined">
+            <div class="income">
+            <h2><span class="orange">In</span>come</h2>
+            <div id="displayBox" class="display-box"></div>
+            <div class="enter">
+            <input type="number" id="incomeInput" placeholder="Enter Income">
+            <button>Add Income</button>
+            </div>
+            </div>
+            <div class="expense">
+            <h2><span class="orange">Exp</span>enses</h2>
+            <div id="displayBox" class="display-box"></div>
+            <select id="expenseType">
+            <option value="food">Food</option>
+            <option value="bills">Electricity</option>
+            <option value="travel">Travelling</option>
+            <!-- Add more expense types as needed -->
+            </select>
+            <input type="number" id="expenseAmount" placeholder="Enter Expense Amount">
+            <button>Add Expense</button>
+            </div>
+        </div>
+            <div class="balance">
+            <h2>Total <span class="orange">Balance</span>: &#8377;<span id="balance">0</span></h2>
+            </div>
+            </div>
+	</body>
+</html>

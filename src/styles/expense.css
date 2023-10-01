@@ -1,0 +1,105 @@
+.manager{
+    color: #fff;
+}
+
+.manager .orange{
+    color: #fa7726;
+   }
+
+.manager h1{
+    padding: 20px;
+    margin-left: 63vh;
+    font-size: 45px;
+}
+
+.manager .combined{
+    display: flex;
+    margin-left: 20vh;
+}
+
+.manager .combined .display-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 450px;
+    height: 300px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.manager .combined .expense{
+    margin-left: 100px;
+}
+
+.income input{
+    width: 337px;
+    margin-top: 10px;
+    height: 30px;
+    background-color: #cccccc4a;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    padding: 7px;
+    color: #fa7726;
+    font-size: 17px;
+    outline: none;
+}
+
+.expense input{
+    width: 231px;
+    margin-top: 10px;
+    height: 30px;
+    background-color: #cccccc4a;
+    border: none;
+    padding: 7px;
+    color: #fa7726;
+    font-size: 17px;
+    outline: none;
+}
+
+.income button, .expense button{
+    height: 30px;
+    background-color: #fa7726;
+    color: #fff;
+    border-radius: 0px 5px 5px 0px;
+    padding: 5px 20px;
+    border: 2px solid #fa7726; 
+    cursor: pointer;
+} 
+
+.income button:hover, .expense button:hover{
+    transition: 0.5s ease;
+    background-color: #fa7726b0;
+}
+
+.expense select{
+    height: 30px;
+    background-color: #fa7726;
+    color: #fff;
+    padding: 5.5px 10px;
+    border-radius: 5px 0px 0px 5px;
+    border: none; 
+    outline: none;
+}
+
+.manager .balance{
+    margin-left: 20vh;
+    margin-top: 60px;
+    font-size: 26px;
+}
+
+
+/* SCROLLBAR CSS */
+.display-box::-webkit-scrollbar {
+    width: 13px;
+}
+
+.display-box::-webkit-scrollbar-thumb {
+    background-color: #fa7726;
+    border-radius: 5px;
+}
+
+.display-box::-webkit-scrollbar-track {
+    background-color: #cccccc69; 
+    border-radius: 5px;
+}
