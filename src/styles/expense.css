@@ -93,7 +93,7 @@
 
 /* PIE CHART SECTION */
 
-.manager .charts{
+.manager .chart-box{
     background-color: #cccccc4a;
     height: 425px;
     margin: 20px 0px;
@@ -101,18 +101,26 @@
     border-radius: 5px;
 }
 
-.manager .charts p{
+.manager .chart-box .charts{
+    display: flex;
+}
+
+.manager .chart-box p{
     text-align: center;
     font-size: 27px;
     font-weight: 600;
 }
 
 .manager .charts .pie{
-    margin-left: 45vh;
+    /* margin-left: 45vh; */
     width: 350px;
     height: 350px;
 }
 
+.manager .charts .expense-chart{
+    width: 350px;
+    height: 350px;
+}
 
 
 /* SCROLLBAR CSS */
