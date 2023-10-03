@@ -1,5 +1,6 @@
 .manager{
     color: #fff;
+    margin-left: 50vh;
 }
 
 .manager .orange{
@@ -8,17 +9,18 @@
 
 .manager h1{
     padding: 20px;
-    margin-left: 63vh;
+    margin-left: 43vh;
     font-size: 45px;
 }
 
 .manager .combined{
     display: flex;
-    margin-left: 20vh;
+   
 }
 
 .manager .combined .display-box {
     border: 1px solid #ccc;
+    font-size: 25px;
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
@@ -33,48 +35,49 @@
 }
 
 .income input{
-    width: 337px;
+    width: 361px;
     margin-top: 10px;
-    height: 30px;
+    height: 50px;
     background-color: #cccccc4a;
     border: none;
     border-radius: 5px 0px 0px 5px;
     padding: 7px;
     color: #fa7726;
-    font-size: 17px;
+    font-size: 14px;
     outline: none;
 }
 
 .expense input{
-    width: 231px;
+    width: 234px;
     margin-top: 10px;
-    height: 30px;
+    height: 50px;
     background-color: #cccccc4a;
     border: none;
     padding: 7px;
     color: #fa7726;
-    font-size: 17px;
+    font-size: 14px;
     outline: none;
 }
 
 .income button, .expense button{
-    height: 30px;
+    height: 49.5px;
     background-color: #fa7726;
     color: #fff;
     border-radius: 0px 5px 5px 0px;
-    padding: 5px 20px;
-    border: 2px solid #fa7726; 
+    padding: 0px 10px;
+    border: none; 
     cursor: pointer;
 } 
 
 .income button:hover, .expense button:hover{
     transition: 0.5s ease;
+    /* border: 2px solid #fa772600; */
     background-color: #fa7726b0;
 }
 
 .expense select{
-    height: 30px;
-    background-color: #fa7726;
+    height: 49.5px;
+    background-color: #fa7726; 
     color: #fff;
     padding: 5.5px 10px;
     border-radius: 5px 0px 0px 5px;
@@ -82,11 +85,34 @@
     outline: none;
 }
 
+
 .manager .balance{
-    margin-left: 20vh;
-    margin-top: 60px;
+    margin-top: 30px;
     font-size: 26px;
 }
+
+/* PIE CHART SECTION */
+
+.manager .charts{
+    background-color: #cccccc4a;
+    height: 425px;
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.manager .charts p{
+    text-align: center;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.manager .charts .pie{
+    margin-left: 45vh;
+    width: 350px;
+    height: 350px;
+}
+
 
 
 /* SCROLLBAR CSS */

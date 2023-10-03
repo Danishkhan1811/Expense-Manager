@@ -1,5 +1,7 @@
 ---
 import Navbar from '../components/navbar.astro'
+import '../styles/index.css'
+import "../styles/scrollbar.css";
 ---
 <html lang="en">
 	<head>
@@ -11,5 +13,9 @@ import Navbar from '../components/navbar.astro'
 	</head>
 	<body>
 		<Navbar/>
+		<div class="heading">
+		<img src="https://astro.js.org/astro.png" alt="">
+		<p>What is <span class="orange">astro</span>?</p>
+		</div>
 	</body>
 </html>

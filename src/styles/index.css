@@ -1,0 +1,19 @@
+.heading{
+    display: flex;
+}
+
+.heading .orange{
+    color: #fa7726;
+}
+
+.heading img{
+    margin-left: 20vh;
+    /* padding: 10px; */
+    height: 200px;
+    width: 200px;
+}
+
+.heading p{
+    color: #fff;
+    font-size: 115px;
+}

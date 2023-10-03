@@ -5,6 +5,7 @@
     background-color: transparent; /* Background color for the sidebar */
     color: #fff; /* Text color for the links */
     padding: 20px; /* Add some padding to the sidebar */
+    position: fixed;
   }
 
 .sidebar .logo{
@@ -44,7 +45,7 @@
   } 
 
   .sidebar .socials i{
-    padding: 5px;
+    padding: 8px;
     margin: 5px;
     color: #fff;
     transition: 0.5s ease;
@@ -52,20 +53,20 @@
   }
 
   .sidebar .socials i:hover{
-    background-color: #cccccc27;
     transform: scale(1.4);
   }
 
-  .sidebar .socials .in:hover{
-    color: #ff006a;
+  .sidebar .socials .gt:hover{
+    background-color: #fff;
+    color: #01283d;
   }
 
-  .sidebar .socials .fb:hover{
-    color: #3b5998;
+  .sidebar .socials .dc:hover{
+    background-color: #711dee;
   }
 
   .sidebar .socials .tw:hover{
-    color: #00a6ff;
+    background-color: #01283d;
   }
 
   /* Change link color on hover */
