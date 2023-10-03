@@ -94,7 +94,7 @@
 /* PIE CHART SECTION */
 
 .manager .chart-box{
-    background-color: #cccccc4a;
+    background-color: #fffbfb;
     height: 425px;
     margin: 20px 0px;
     padding: 10px;
@@ -112,14 +112,13 @@
 }
 
 .manager .charts .pie{
-    /* margin-left: 45vh; */
+    margin-left: 10vh;
     width: 350px;
     height: 350px;
 }
 
 .manager .charts .expense-chart{
-    width: 350px;
-    height: 350px;
+    margin-left: 10vh;
 }
 
 
