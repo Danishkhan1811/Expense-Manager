@@ -41,8 +41,8 @@ import "../styles/scrollbar.css";
             </div>
             <div class="balance">
             <div class="flex">
-                <div>Total Income: ₹<span id="totalIncome">0</span></div>
-                <div class="totalExpenses">Total Expenses: ₹<span id="totalExpenses">0</span></div>
+                <div>Total <span class="orange">Income</span>: ₹<span id="totalIncome">0</span></div>
+                <div class="totalExpenses">Total <span class="orange">Expenses</span>: ₹<span id="totalExpenses">0</span></div>
             </div> 
                 <h2>Total <span class="orange">Balance</span>: ₹<span id="balance">0</span></h2>
             </div>
@@ -133,7 +133,7 @@ import "../styles/scrollbar.css";
         labels: ["Income", "Expenses"],
         datasets: [{
             data: [totalIncome, totalExpenses],
-            backgroundColor: ["#B76EC8", "#420051"],
+            backgroundColor: ["blue", "#008e55"],
         }],
     };
 
@@ -142,6 +142,14 @@ import "../styles/scrollbar.css";
         type: "pie",
         data: chartData,
     });
+}
+
+// coloring the bars
+function createLinearGradient(ctx, color1, color2) {
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400); // Adjust the gradient direction and size as needed
+    gradient.addColorStop(0, color1);
+    gradient.addColorStop(1, color2);
+    return gradient;
 }
 
 function updateBarGraph() {
@@ -154,6 +162,7 @@ function updateBarGraph() {
             const expenseAmounts = expenseTypes.map(type => expenseData[type]);
 
             const ctx = document.getElementById("barGraph").getContext("2d");
+            const gradientColor = createLinearGradient(ctx, "blue", "green");
             barGraph = new Chart(ctx, {
                 type: "bar",
                 data: {
@@ -162,12 +171,7 @@ function updateBarGraph() {
                         {
                             label: "Money Spent",
                             data: expenseAmounts,
-                            backgroundColor: [
-                                "#B76EC8",
-                                "#B700E0",
-                                "#75008F",
-                                "#420051"
-                            ],
+                            backgroundColor: gradientColor,
                         },
                     ],
                 },
