@@ -8,11 +8,18 @@ import "../styles/scrollbar.css";
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="https://astro.js.org/astro.png"/>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="https://astro.js.org/astro.png"
+        />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Expense Manager</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
@@ -23,8 +30,16 @@ import "../styles/scrollbar.css";
                 <div class="income">
                     <h2><span class="orange">In</span>come</h2>
                     <div id="incomeTransactions" class="display-box"></div>
-                    <input type="number" min="0" id="incomeInput" class="input-box" placeholder="Enter Income Amount"/>
-                    <button id="addIncomeButton" class="submit-button">Add Income</button>
+                    <input
+                        type="number"
+                        min="0"
+                        id="incomeInput"
+                        class="input-box"
+                        placeholder="Enter Income Amount"
+                    />
+                    <button id="addIncomeButton" class="submit-button"
+                        >Add Income</button
+                    >
                 </div>
                 <div class="expense">
                     <h2><span class="orange">Exp</span>enses</h2>
@@ -35,29 +50,45 @@ import "../styles/scrollbar.css";
                         <option value="Travel">🚗Travelling</option>
                         <option value="Clothes">👔Clothes</option>
                     </select>
-                    <input type="number" min="0" id="expenseInput" placeholder="Enter Expense Amount"/>
+                    <input
+                        type="number"
+                        min="0"
+                        id="expenseInput"
+                        placeholder="Enter Expense Amount"
+                    />
                     <button id="addExpenseButton">Add Expense</button>
                 </div>
             </div>
             <div class="balance">
-            <div class="flex">
-                <div>Total <span class="orange">Income</span>: ₹<span id="totalIncome">0</span></div>
-                <div class="totalExpenses">Total <span class="orange">Expenses</span>: ₹<span id="totalExpenses">0</span></div>
-            </div> 
-                <h2>Total <span class="orange">Balance</span>: ₹<span id="balance">0</span></h2>
+                <div class="flex">
+                    <div>
+                        Total <span class="orange">Income</span>: ₹<span
+                            id="totalIncome">0</span>
+                    </div>
+                    <div class="totalExpenses">
+                        Total <span class="orange">Expenses</span>: ₹<span
+                            id="totalExpenses">0</span>
+                    </div>
+                </div>
+                <h2>
+                    Total <span class="orange">Balance</span>: ₹<span
+                        id="balance">0</span>
+                </h2>
             </div>
             <div class="chart-box">
                 <p>Analytics</p>
-            <div class="charts">
-                <div class="pie">
-                    <canvas id="pieChart"></canvas>
-                </div>
-                <div class="expense-chart">
-                    <canvas id="barGraph" width="400" height="350"></canvas>
+                <div class="charts">
+                    <div class="pie">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                    <div class="expense-chart">
+                        <canvas id="barGraph" width="400" height="350"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
+
+<!--------------------------------- JAVASCRIPT --------------------------------->
         <script>
             let balance = 0;
             let totalIncome = 0;
@@ -65,128 +96,149 @@ import "../styles/scrollbar.css";
             let pieChart;
             let barGraph;
 
-        const expenseData = {
-            Food: 0,
-            Electricity: 0,
-            Travel: 0,
-            Clothes: 0
-        };
+            const expenseData = {
+                Food: 0,
+                Electricity: 0,
+                Travel: 0,
+                Clothes: 0,
+            };
 
-            document.getElementById("addIncomeButton").addEventListener("click", function () {
-                const incomeInput = document.getElementById("incomeInput");
-                const income = parseFloat(incomeInput.value);
-                if (!isNaN(income)) {
-                    balance += income;
-                    totalIncome += income;
-                    updateBalance();
-                    updateTotalIncome();
-                    updateChart();
-		    const incomeTransactions = document.getElementById("incomeTransactions");
-                    const incomeItem = document.createElement("div");
-                    incomeItem.textContent = `₹${income}`;
-                    incomeTransactions.appendChild(incomeItem);
-                    incomeInput.value = "";
-                }
-            });
-    
-            document.getElementById("addExpenseButton").addEventListener("click", function () {
-                const expenseInput = document.getElementById("expenseInput");
-                const expenseType = document.getElementById("expenseType");
-                const expense = parseFloat(expenseInput.value);
-                if (!isNaN(expense)) {
-                    balance -= expense;
-                    totalExpenses += expense;
-                    updateBalance();
-                    updateTotalExpenses();
-                    updateChart();
-		           updateExpenseData(expenseType.value, expense);
-                    const expenseTransactions = document.getElementById("expenseTransactions");
-                    const expenseItem = document.createElement("div");
-                    expenseItem.textContent = `${expenseType.value}: ₹${expense}`;
-                    expenseTransactions.appendChild(expenseItem);
-                    expenseInput.value = "";
-                }
-            });
-    
+            document
+                .getElementById("addIncomeButton")
+                .addEventListener("click", function () {
+                    const incomeInput = document.getElementById("incomeInput");
+                    const income = parseFloat(incomeInput.value);
+                    if (!isNaN(income)) {
+                        balance += income;
+                        totalIncome += income;
+                        updateBalance();
+                        updateTotalIncome();
+                        updateChart();
+                        const incomeTransactions =
+                            document.getElementById("incomeTransactions");
+                        const incomeItem = document.createElement("div");
+                        incomeItem.textContent = `₹${income}`;
+                        incomeTransactions.appendChild(incomeItem);
+                        incomeInput.value = "";
+                    }
+                });
+
+            document
+                .getElementById("addExpenseButton")
+                .addEventListener("click", function () {
+                    const expenseInput =
+                        document.getElementById("expenseInput");
+                    const expenseType = document.getElementById("expenseType");
+                    const expense = parseFloat(expenseInput.value);
+                    if (!isNaN(expense)) {
+                        balance -= expense;
+                        totalExpenses += expense;
+                        updateBalance();
+                        updateTotalExpenses();
+                        updateChart();
+                        updateExpenseData(expenseType.value, expense);
+                        const expenseTransactions = document.getElementById(
+                            "expenseTransactions",
+                        );
+                        const expenseItem = document.createElement("div");
+                        expenseItem.textContent = `${expenseType.value}: ₹${expense}`;
+                        expenseTransactions.appendChild(expenseItem);
+                        expenseInput.value = "";
+                    }
+                });
+
             function updateBalance() {
                 const balanceElement = document.getElementById("balance");
                 balanceElement.textContent = balance.toFixed(2);
             }
 
             function updateTotalIncome() {
-            const totalIncomeElement = document.getElementById("totalIncome");
-            totalIncomeElement.textContent = totalIncome.toFixed(2);
-        }
-
-        function updateTotalExpenses() {
-            const totalExpensesElement = document.getElementById("totalExpenses");
-            totalExpensesElement.textContent = totalExpenses.toFixed(2);
-        }
-
-        function updateChart() {
-    if (pieChart) {
-	console.log("Working");
-        pieChart.destroy(); // Destroy the previous chart instance to prevent duplicates.
-    }
-
-    const chartData = {
-        labels: ["Income", "Expenses"],
-        datasets: [{
-            data: [totalIncome, totalExpenses],
-            backgroundColor: ["blue", "#008e55"],
-        }],
-    };
-
-    const ctx = document.getElementById("pieChart").getContext("2d");
-    pieChart = new Chart(ctx, {
-        type: "pie",
-        data: chartData,
-    });
-}
-
-// coloring the bars
-function createLinearGradient(ctx, color1, color2) {
-    const gradient = ctx.createLinearGradient(0, 0, 0, 400); // Adjust the gradient direction and size as needed
-    gradient.addColorStop(0, color1);
-    gradient.addColorStop(1, color2);
-    return gradient;
-}
-
-function updateBarGraph() {
-            if (barGraph) {
-		console.log("Working GGGGG");
-                barGraph.destroy(); // Destroy the previous chart instance to prevent duplicates.
+                const totalIncomeElement =
+                    document.getElementById("totalIncome");
+                totalIncomeElement.textContent = totalIncome.toFixed(2);
             }
 
-            const expenseTypes = Object.keys(expenseData);
-            const expenseAmounts = expenseTypes.map(type => expenseData[type]);
+            function updateTotalExpenses() {
+                const totalExpensesElement =
+                    document.getElementById("totalExpenses");
+                totalExpensesElement.textContent = totalExpenses.toFixed(2);
+            }
 
-            const ctx = document.getElementById("barGraph").getContext("2d");
-            const gradientColor = createLinearGradient(ctx, "blue", "green");
-            barGraph = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: expenseTypes,
+            function updateChart() {
+                if (pieChart) {
+                    console.log("Working");
+                    pieChart.destroy(); // Destroy the previous chart instance to prevent duplicates.
+                }
+
+                const chartData = {
+                    labels: ["Income", "Expenses"],
                     datasets: [
                         {
-                            label: "Money Spent",
-                            data: expenseAmounts,
-                            backgroundColor: gradientColor,
+                            data: [totalIncome, totalExpenses],
+                            backgroundColor: ["blue", "#008e55"],
                         },
                     ],
-                },
-                options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                },
-            });
-        }
+                };
 
-function updateExpenseData(type, amount) {
-            expenseData[type] += amount;
-            updateBarGraph();
-        }
+                const ctx = document
+                    .getElementById("pieChart")
+                    .getContext("2d");
+                pieChart = new Chart(ctx, {
+                    type: "pie",
+                    data: chartData,
+                });
+            }
 
+            // coloring the bars
+            function createLinearGradient(ctx, color1, color2) {
+                const gradient = ctx.createLinearGradient(0, 0, 0, 400); // Adjust the gradient direction and size as needed
+                gradient.addColorStop(0, color1);
+                gradient.addColorStop(1, color2);
+                return gradient;
+            }
+
+            function updateBarGraph() {
+                if (barGraph) {
+                    console.log("Working GGGGG");
+                    barGraph.destroy(); // Destroy the previous chart instance to prevent duplicates.
+                }
+
+                const expenseTypes = Object.keys(expenseData);
+                const expenseAmounts = expenseTypes.map(
+                    (type) => expenseData[type],
+                );
+
+                const ctx = document
+                    .getElementById("barGraph")
+                    .getContext("2d");
+                const gradientColor = createLinearGradient(
+                    ctx,
+                    "blue",
+                    "green",
+                );
+                barGraph = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: expenseTypes,
+                        datasets: [
+                            {
+                                label: "Money Spent",
+                                data: expenseAmounts,
+                                backgroundColor: gradientColor,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: false,
+                        maintainAspectRatio: false,
+                    },
+                });
+            }
+
+            function updateExpenseData(type, amount) {
+                expenseData[type] += amount;
+                updateBarGraph();
+            }
         </script>
     </body>
 </html>
