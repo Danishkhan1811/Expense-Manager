@@ -8,18 +8,11 @@ import "../styles/scrollbar.css";
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="https://astro.js.org/astro.png"
-        />
+        <link rel="icon" type="image/svg+xml" href="https://astro.js.org/astro.png"/>
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Expense Manager</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
@@ -47,8 +40,10 @@ import "../styles/scrollbar.css";
                 </div>
             </div>
             <div class="balance">
+            <div class="flex">
                 <div>Total Income: ₹<span id="totalIncome">0</span></div>
-                <div>Total Expenses: ₹<span id="totalExpenses">0</span></div>
+                <div class="totalExpenses">Total Expenses: ₹<span id="totalExpenses">0</span></div>
+            </div> 
                 <h2>Total <span class="orange">Balance</span>: ₹<span id="balance">0</span></h2>
             </div>
             <div class="chart-box">
@@ -138,7 +133,7 @@ import "../styles/scrollbar.css";
         labels: ["Income", "Expenses"],
         datasets: [{
             data: [totalIncome, totalExpenses],
-            backgroundColor: ["green", "red"],
+            backgroundColor: ["#B76EC8", "#420051"],
         }],
     };
 
@@ -168,10 +163,10 @@ function updateBarGraph() {
                             label: "Money Spent",
                             data: expenseAmounts,
                             backgroundColor: [
-                                "red",
-                                "blue",
-                                "green",
-                                "yellow"
+                                "#B76EC8",
+                                "#B700E0",
+                                "#75008F",
+                                "#420051"
                             ],
                         },
                     ],

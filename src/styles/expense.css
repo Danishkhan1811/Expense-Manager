@@ -19,7 +19,8 @@
 }
 
 .manager .combined .display-box {
-    border: 1px solid #ccc;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.367), rgba(0, 0, 0, 0.427));
+    border: 1px solid #cccccc74;
     font-size: 25px;
     border-radius: 5px;
     padding: 10px;
@@ -91,14 +92,28 @@
     font-size: 26px;
 }
 
+.manager .balance .flex{
+    display: flex;
+}
+
+.manager .balance .flex .totalExpenses{
+    margin-left: 78vh;
+    position: absolute;
+}
+
+.manager .balance h2{
+    margin-top: 6vh;
+}
+
 /* PIE CHART SECTION */
 
 .manager .chart-box{
-    background-color: #fffbfb;
+    background-color: #00000064;
     height: 425px;
     margin: 20px 0px;
     padding: 10px;
     border-radius: 5px;
+    border: 1px solid #cccccc73;
 }
 
 .manager .chart-box .charts{

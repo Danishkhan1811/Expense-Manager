@@ -1,7 +1,8 @@
 ---
 import Navbar from '../components/navbar.astro'
 import '../styles/index.css'
-import "../styles/scrollbar.css";
+import '../styles/scrollbar.css';
+import '../styles/global.css';
 ---
 <html lang="en">
 	<head>
@@ -13,9 +14,20 @@ import "../styles/scrollbar.css";
 	</head>
 	<body>
 		<Navbar/>
+		<div class="content">
 		<div class="heading">
 		<img src="https://astro.js.org/astro.png" alt="">
-		<p>What is <span class="orange">astro</span>?</p>
+		<h1>What is <span class="orange">astro</span>?</h1>
 		</div>
+		<p>An open-source web framework.<br>Focused on performance</p>
+		<div class="compartments">
+			<div><h2>Component Islands</h2></div>
+			<div><h2>Server-first API design</h2></div>
+			<div><h2>Zero JS, by default</h2></div>
+			<div><h2>Edge-ready</h2></div>
+			<div><h2>Customizable</h2></div>
+			<div><h2>UI-agnostic</h2></div>
+		</div>
+		</div> 
 	</body>
 </html>
