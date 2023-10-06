@@ -3,6 +3,13 @@ import Navbar from '../components/navbar.astro'
 import '../styles/index.css'
 import '../styles/scrollbar.css';
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+import island from '../images/island.png'
+import apiimage from '../images/api.png'
+import edge from '../images/edge.png'
+import javaimg from '../images/java.png'
+import custom from '../images/customize.png'
+import react from '../images/react.png'
 ---
 <html lang="en">
 	<head>
@@ -21,12 +28,12 @@ import '../styles/global.css';
 		</div>
 		<p>An open-source web framework.<br>Focused on performance</p>
 		<div class="compartments">
-			<div><h2>Component Islands</h2></div>
-			<div><h2>Server-first API design</h2></div>
-			<div><h2>Zero JS, by default</h2></div>
-			<div><h2>Edge-ready</h2></div>
-			<div><h2>Customizable</h2></div>
-			<div><h2>UI-agnostic</h2></div>
+			<div><h2>Component Islands</h2><Image src={island} alt='island'/></div>
+			<div><h2>Server-first API design</h2><Image src={apiimage} alt='island'/></div>
+			<div><h2>Zero JS, by default</h2><Image src={javaimg} alt='island'/></div>
+			<div><h2>Edge-ready</h2><Image src={edge} alt='island'/></div>
+			<div><h2>Customizable</h2><Image src={custom} alt='island'/></div>
+			<div><h2>UI-agnostic</h2><Image src={react} alt='island'/></div>
 		</div>
 		</div> 
 	</body>
