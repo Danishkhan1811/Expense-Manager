@@ -1,0 +1,69 @@
+---
+import Navbar from '../components/navbar.astro'
+import '../styles/scrollbar.css';
+import '../styles/global.css';
+import '../styles/why.css';
+import { Image } from 'astro:assets';
+import speed from '../images/speed.png'
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="https://astro.js.org/astro.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Expense Manager</title>
+	</head>
+	<body>
+		<Navbar/>
+		<div class="content">
+		<div class="heading">
+		<img src="https://astro.js.org/astro.png" alt="">
+		<h1>Why <span class="orange">astro</span>?</h1>
+		</div>
+        <div class="container">
+            <h1>Astro is…</h1> <br>
+            <p><span class="orange">Content-focused:</span> Astro was designed for content-rich websites. <br>
+                <span class="orange">Server-first:</span> Websites run faster when they render HTML on the server. <br>
+                <span class="orange">Fast by default:</span> It should be impossible to build a slow website in Astro. <br>
+                <span class="orange">Easy to use:</span> You don’t need to be an expert to build something with Astro. <br>
+                <span class="orange">Fully-featured, but flexible:</span> Over 100+ Astro integrations to choose from.</p>
+        </div>
+        <div class="comparison">
+            <h2>Here's how astro compares with other frameworks...</h2>
+            <img src={speed.src} alt='This is a speed comparison'/>
+        </div>
+        <div class="build">
+            <h1>What does <span class="orange">astro</span> do <br> better than other frameworks</h1>
+            <div class="compartments">
+                <div><h2>Building <br> a <span class="orange">blog</span></h2></div>
+                <div><h2>Building <br> an <span class="orange">e-commerce</span> site</h2></div>
+                <div><h2>Building <br> a <span class="orange">web application</span></h2></div>
+            </div>
+        </div>
+        <div class="problem">
+            <h1>Problems solved by <span class="orange">astro</span></h1>
+            <div class="compartments">
+                <div><h2>Building websites with <br><span class="orange">Server-Side Rendering (SSR)</span></h2><p> Astro JS reduces the complexity in building websites with SSR</p></div>
+                <div><h2>Building websites with <br><span class="orange">Static Site Generation (SSG)</span></h2><p>Makes it easier to build websites that need to be updates frequently</p></div>
+                <div><h2>Building websites with <br><span class="orange">hybrid rendering</span></h2><p>Combines Server Side Rendering and Static Site Generation to create fast and interactive websites</p></div>
+            </div>
+        </div>
+		</div> 
+	</body>
+</html>
+
+<!--
+WHY ASTRO?
+
+WHY IS IT BETTER THAN OTHERS?
+Building a blog: Astro JS can be used to build a blog that is faster and more scalable than a blog built with other frameworks, such as WordPress or Blogger. Astro blogs are also typically easier to maintain and update.
+Building an e-commerce site: Astro JS can be used to build an e-commerce site that is fast, secure, and scalable. Astro also provides a number of features that can be useful for e-commerce sites, such as support for product variants and checkout flows.
+Building a web application: Astro JS can be used to build a web application that is fast, interactive, and scalable. Astro also supports a number of features that can be useful for web applications, such as authentication and authorization.
+
+PROBLEMS SOLVED BY ASTRO
+Building websites with server-side rendering (SSR): SSR can be a great way to improve the performance and interactivity of your website, but it can also be complex and difficult to set up. Astro JS makes it easy to build websites with SSR, without the need for any complex configuration.
+Building websites with static site generation (SSG): SSG can be a great way to improve the performance and scalability of your website, but it can also be difficult to use for websites that need to be updated frequently. Astro JS makes it easy to build websites with SSG, even for websites that need to be updated frequently.
+Building websites with hybrid rendering: Hybrid rendering is a technique that combines the best of SSR and SSG to create websites that are fast, interactive, and scalable. Astro JS makes it easy to build websites with hybrid rendering, without the need for any complex configuration.
+
+-->
