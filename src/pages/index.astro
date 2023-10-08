@@ -10,6 +10,7 @@ import edge from '../images/edge.png'
 import javaimg from '../images/java.png'
 import custom from '../images/customize.png'
 import react from '../images/react.png'
+import mainisland from '../images/astro-island.png'
 ---
 <html lang="en">
 	<head>
@@ -35,6 +36,12 @@ import react from '../images/react.png'
 			<div><h2>Customizable</h2><Image src={custom} alt='island'/></div>
 			<div><h2>UI-agnostic</h2><Image src={react} alt='island'/></div>
 		</div>
+		<div class="island">
+		<h1>What is an <span class="orange">astro</span> island?</h1>
+		<p>The term “Astro Island” refers to an interactive UI component on an otherwise static page of HTML. 
+			Multiple islands can exist on a page, and an island always renders in isolation.</p>
+        <img src={mainisland.src} alt="This is an image">
+	    </div>
 		</div> 
 	</body>
 </html>
