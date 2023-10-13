@@ -8,18 +8,11 @@ import "../styles/scrollbar.css";
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="https://astro.js.org/astro.png"
-        />
+        <link rel="icon" type="image/svg+xml" href="https://astro.js.org/astro.png"/>
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Expense Manager</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
@@ -114,8 +107,7 @@ import "../styles/scrollbar.css";
                         updateBalance();
                         updateTotalIncome();
                         updateChart();
-                        const incomeTransactions =
-                            document.getElementById("incomeTransactions");
+                        const incomeTransactions = document.getElementById("incomeTransactions");
                         const incomeItem = document.createElement("div");
                         incomeItem.textContent = `₹${income}`;
                         incomeTransactions.appendChild(incomeItem);
@@ -126,8 +118,7 @@ import "../styles/scrollbar.css";
             document
                 .getElementById("addExpenseButton")
                 .addEventListener("click", function () {
-                    const expenseInput =
-                        document.getElementById("expenseInput");
+                    const expenseInput = document.getElementById("expenseInput");
                     const expenseType = document.getElementById("expenseType");
                     const expense = parseFloat(expenseInput.value);
                     if (!isNaN(expense)) {
@@ -137,9 +128,7 @@ import "../styles/scrollbar.css";
                         updateTotalExpenses();
                         updateChart();
                         updateExpenseData(expenseType.value, expense);
-                        const expenseTransactions = document.getElementById(
-                            "expenseTransactions",
-                        );
+                        const expenseTransactions = document.getElementById("expenseTransactions");
                         const expenseItem = document.createElement("div");
                         expenseItem.textContent = `${expenseType.value}: ₹${expense}`;
                         expenseTransactions.appendChild(expenseItem);
